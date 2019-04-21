@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\?*$ index.php?__route__=/$1 [L,QSA]
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type, Accept-Response"
+Header add Access-Control-Allow-Methods "GET, POST, PATCH, PUT, OPTIONS, DELETE"
